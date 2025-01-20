@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Afspraken Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Afspraken Planner</title>
+
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="site-title">Print Afspraken Planner</h1>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="#maand" class="nav-link">Maandoverzicht</a></li>
+                <li><a href="#week" class="nav-link">Weekoverzicht</a></li>
+                <li><a href="#dag" class="nav-link">Dagoverzicht</a></li>
+                <li><a href="#admin" class="nav-link">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="planner" class="planner-section">
+            <div class="calendar-controls">
+                <button id="prevWeek" class="control-btn">Vorige Week</button>
+                <h2 id="currentWeek" class="week-title" style="cursor: pointer;">Week 1</h2>
+                <button id="nextWeek" class="control-btn">Volgende Week</button>
+            </div>
+
+            <div class="calendar-grid">
+                <div class="time-slots">
+                    <!-- Tijdslots per kwartier van 9:00 tot 17:00 -->
+                </div>
+                <div class="days">
+                    <div class="day-card" data-day="maandag">
+                        <h3 class="day-title">Maandag</h3>
+                        <div class="appointments"></div>
+                    </div>
+                    <div class="day-card" data-day="dinsdag">
+                        <h3 class="day-title">Dinsdag</h3>
+                        <div class="appointments"></div>
+                    </div>
+                    <div class="day-card" data-day="woensdag">
+                        <h3 class="day-title">Woensdag</h3>
+                        <div class="appointments"></div>
+                    </div>
+                    <div class="day-card" data-day="donderdag">
+                        <h3 class="day-title">Donderdag</h3>
+                        <div class="appointments"></div>
+                    </div>
+                    <div class="day-card" data-day="vrijdag">
+                        <h3 class="day-title">Vrijdag</h3>
+                        <div class="appointments"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="appointment-form" class="appointment-section hidden">
+            <h2 class="section-title">Nieuwe Printafspraak</h2>
+            <form id="print-appointment" class="appointment-form">
+                <div class="form-group">
+                    <label for="paper-size" class="form-label">Papierformaat:</label>
+                    <select id="paper-size" class="form-select" required>
+                        <option value="A5">A5</option>
+                        <option value="A4">A4</option>
+                        <option value="A3">A3</option>
+                        <option value="A2">A2</option>
+                        <option value="A1">A1</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="print-type" class="form-label">Print type:</label>
+                    <select id="print-type" class="form-select" required>
+                        <option value="single">Enkelzijdig</option>
+                        <option value="double">Dubbelzijdig</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="copies" class="form-label">Aantal prints:</label>
+                    <input type="number" id="copies" class="form-input" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="price" class="form-label">Prijs:</label>
+                    <input type="number" id="price" class="form-input" step="0.01" required>
+                </div>
+                <button type="submit" class="submit-btn">Afspraak Maken</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="admin-login" class="modal hidden">
+        <form id="login-form" class="login-form">
+            <h2 class="modal-title">Admin Login</h2>
+            <div class="form-group">
+                <label for="username" class="form-label">Gebruikersnaam:</label>
+                <input type="text" id="username" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Wachtwoord:</label>
+                <input type="password" id="password" class="form-input" required>
+            </div>
+            <button type="submit" class="login-btn">Inloggen</button>
+        </form>
+    </div>
+</body>
+</html>
