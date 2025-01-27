@@ -204,6 +204,7 @@ body {
         opacity: 1;
     }
 }
+
 .modal::before {
     content: '';
     position: fixed;
@@ -223,4 +224,49 @@ body {
     .calendar-controls {
         flex-direction: column;
     }
+}
+
+.overview-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.day-overview, .week-overview {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.appointments-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.appointment-card {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 1rem;
+    display: grid;
+    gap: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.appointment-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.time-slot {
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
 }

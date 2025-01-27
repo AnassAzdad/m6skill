@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Populate the time slots
+    const appointmentTimeSelect = document.getElementById('appointment-time');
+    for (let hour = 9; hour < 17; hour++) {
+        for (let minute = 0; minute < 60; minute += 15) {
+            const time = `${hour}:${minute === 0 ? '00' : minute}`;
+            const option = document.createElement('option');
+            option.value = time;
+            option.textContent = time;
+            appointmentTimeSelect.appendChild(option);
+        }
+    }
+
     let weekNumber = 1;
     const weekTitle = document.getElementById('currentWeek');
     const nextWeekBtn = document.getElementById('nextWeek');

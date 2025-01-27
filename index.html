@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Print Afspraken Planner</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
-</head>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Print Afspraken Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('print-appointment');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const time = document.getElementById('appointment-time').value;
+                const paperSize = document.getElementById('paper-size').value;
+                const printType = document.getElementById('print-type').value;
+                const copies = document.getElementById('copies').value;
+                const extraInfo = document.getElementById('price').value;
 
+                alert(`Afspraak Details:\nTijd: ${time}\nPapierformaat: ${paperSize}\nPrint type: ${printType}\nAantal prints: ${copies}\nExtra info: ${extraInfo}`);
+                location.reload();
+            });
+        });
+    </script>
 </head>
 <body>
     <header class="site-header">
@@ -22,8 +29,8 @@
         <nav class="main-nav">
             <ul class="nav-list">
                 <li><a href="index.html" class="nav-link">Plan een dag</a></li>
-                <li><a href="#week" class="nav-link">Weekoverzicht</a></li>
-                <li><a href="#dag" class="nav-link">Dagoverzicht</a></li>
+                <li><a href="week-overview.html" class="nav-link">Weekoverzicht</a></li>
+                <li><a href="day-overview.html" class="nav-link">Dagoverzicht</a></li>
                 <li><a href="admin.html" class="nav-link">Admin Login</a></li>
             </ul>
         </nav>
@@ -65,25 +72,30 @@
                 </div>
             </div>
         </section>
-
-        <section id="appointment-form" class="appointment-section hidden">
-            <h2 class="section-title">Nieuwe Printafspraak</h2>
-            <form id="print-appointment" class="appointment-form">
-                <div class="form-group">
-                    <label for="paper-size" class="form-label">Papierformaat:</label>
-                    <select id="paper-size" class="form-select" required>
-                        <option value="A5">A5</option>
-                        <option value="A4">A4</option>
-                        <option value="A3">A3</option>
-                        <option value="A2">A2</option>
-                        <option value="A1">A1</option>
-                    </select>
+          <section id="appointment-form" class="appointment-section hidden">
+              <h2 class="section-title">Nieuwe Printafspraak</h2>
+              <form id="print-appointment" class="appointment-form">
+                  <div class="form-group">
+                      <label for="appointment-time" class="form-label">Afspraak Tijd:</label>
+                      <select id="appointment-time" class="form-select" required>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="paper-size" class="form-label">Papierformaat:</label>
+                      <select id="paper-size" class="form-select" required>
+                          <option value="A5">A5</option>
+                          <option value="A4" selected>A4</option>
+                          <option value="A3">A3</option>
+                          <option value="A2">A2</option>
+                          <option value="A1">A1</option>
+                      </select>
                 </div>
                 <div class="form-group">
                     <label for="print-type" class="form-label">Print type:</label>
                     <select id="print-type" class="form-select" required>
                         <option value="single">Enkelzijdig</option>
                         <option value="double">Dubbelzijdig</option>
+                        <option value="triple">Driedubbelzijdig</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -92,7 +104,7 @@
                 </div>
                 <div class="form-group">
                     <label for="price" class="form-label">Extra info:</label>
-                    <input type="number" id="price" class="form-input" step="0.01" required>
+                    <input type="text" id="price" class="form-input" required>
                 </div>
                 <button type="submit" class="submit-btn">Afspraak Maken</button>
             </form>

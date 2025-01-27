@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekoverzicht - Print Afspraken Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="site-title">Print Afspraken Planner</h1>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Plan een dag</a></li>
+                <li><a href="week-overview.html" class="nav-link">Weekoverzicht</a></li>
+                <li><a href="day-overview.html" class="nav-link">Dagoverzicht</a></li>
+                <li><a href="admin.html" class="nav-link">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="overview-section">
+            <div class="calendar-controls">
+                <button id="prevWeek" class="control-btn">Vorige Week</button>
+                <h2 id="currentWeek" class="week-title">Week 1</h2>
+                <button id="nextWeek" class="control-btn">Volgende Week</button>
+            </div>
+            <div class="week-overview">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
